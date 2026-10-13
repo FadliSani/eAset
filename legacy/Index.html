@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengurusan Aset</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+  <?!= include('Style') ?>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="topbar-in">
+        <div class="brand"><span class="mark" aria-hidden="true"></span><span>Pengurusan Aset</span></div>
+        <div class="who" id="who"></div>
+      </div>
+    </header>
+    <div class="nav-wrap" id="navWrap" hidden>
+      <nav class="nav" id="nav" aria-label="Menu utama"></nav>
+    </div>
+    <main id="main" class="shell"><p class="muted pad">Memuatkan…</p></main>
+  </div>
+
+  <div id="layer" class="layer" hidden>
+    <div class="sheet" role="dialog" aria-modal="true" id="sheet"><div id="sheetBody"></div></div>
+  </div>
+
+  <div id="labels" class="labels" hidden>
+    <div class="labels-bar">
+      <strong id="labelCount"></strong>
+      <div class="actions">
+        <button type="button" class="btn" data-act="print-labels">Cetak</button>
+        <button type="button" class="btn ghost" data-act="close-labels">Tutup</button>
+      </div>
+    </div>
+    <div class="label-grid" id="labelGrid"></div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <script>const INITIAL_ID = <?!= initialId ?>;</script>
+  <?!= include('Script') ?>
+</body>
+</html>
